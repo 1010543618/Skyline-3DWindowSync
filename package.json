@@ -1,0 +1,28 @@
+{
+  "name": "skyline-3dwindowsync",
+  "version": "1.0.0",
+  "description": "基于skyline的多窗口同步（6.x版本，web端）",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1010543618/Skyline-3DWindowSync.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1010543618/Skyline-3DWindowSync/issues"
+  },
+  "homepage": "https://github.com/1010543618/Skyline-3DWindowSync#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "rollup": "^0.56.2"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "ws": "^5.1.1"
+  }
+}

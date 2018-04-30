@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skyline-3DWindowSync</title>
+</head>
+<body>
+  <div>
+    <button onclick="s3.start()">start开始</button>
+    <button onclick="s3.stop()">stop停止</button>
+  </div>
+  <script src="./node_modules/jquery/dist/jquery.js"></script>
+  <script src="./dist/s3dws.js"></script>
+  <script>
+    $(function(){
+      /*
+        加载页面时如果有JS改动了object节点可能会导致Skyline插件失效
+        （eg：使用jquery-easyui时先加载object再初始化界面Skyline插件会失效）
+        所以应该在页面完成动态加载object节点
+      */
+      $('body').prepend('<object id="TerraExplorer3DWindow" classid="CLSID:3a4f9192-65a8-11d5-85c1-0001023952c1" style="width: 500px; height: 500px"></object>')
+      $('body').prepend('<object id="SGWorld" classid="CLSID:3a4f9197-65a8-11d5-85c1-0001023952c1" style="visibility:hidden;"></object>')
+
+      // 配置fly_path
+      // fly可以直接发布成网络的，但mpt的发布成网络的必须装TerraGate Manager，还是获取路径用本地的比较方便
+      $.get("./get_path", function(path){
+        window.s3 = s3dws.init({fly_path: path + "\\data\\test.fly"})
+      })
+    });
+  </script>
+</body>
+</html>
+
